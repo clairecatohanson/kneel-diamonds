@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=The+Nautigal:wght@400;700&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background-color: #604D53;
+    line-height: 1.25;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'The Nautigal', cursive;
+    font-size: 7em;
+    color: #FFDBDA;
+}
+
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.box {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 20px 40px;
+    margin: 10px;
+    background-color: #c3ced0;
+    color: #8c485d;
+    border-radius: 15px;
+    box-shadow: 5px 5px #9DA3A4;
+}
+
+.box__heading {
+    margin: 10px 0px;
+    text-shadow: 1.5px 1.5px #9DA3A4;
+}
+
+.box__item, .one-column__item {
+    padding: 3px;
+    font-size: 1.2em;
+}
+
+#button__order {
+    display: block;
+    width: 30%;
+    margin: 40px auto;
+    padding: 20px 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff9ea;
+    background-color: #DB7F8E;
+    border: solid 2px #3e1926;
+    border-radius: 6px;
+}
+
+#button__order:active {
+    background-color: #3e1926;
+}
+
+.one-column {
+    background-color: #FFDBDA;
+    box-sizing: border-box;
+    padding: 30px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #8c485d
+}
+
+.one-column__heading {
+    font-size: 2em;
+}
