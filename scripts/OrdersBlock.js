@@ -11,12 +11,12 @@ export const PlaceOrderButton = () => {
 }
 
 export const OrdersList = async () => {
-    const response = await fetch('http://localhost:8088/orders?_expand=metal&_expand=style&_expand=size')
+    const response = await fetch('http://localhost:8088/orders?_expand=metal&_expand=style&_expand=size&_expand=type')
     const ordersArray = await response.json()
 
     let html = ''
     for (const order of ordersArray) {
-        const orderPrice = parseFloat(order.metal.price + order.size.price + order.style.price)
+        const orderPrice = parseFloat((order.metal.price + order.size.price + order.style.price) * order.type.priceFactor)
         html += `<p class="one-column__item">Order #${order.id} costs <span class="bold">$${orderPrice.toFixed(2)}</span></p>`
     }
     

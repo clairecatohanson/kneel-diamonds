@@ -1,27 +1,21 @@
-import { setMetalSelection } from './TransientState.js'
+import { setMetalSelection, setToChecked } from './TransientState.js'
 
 const handleMetalChange = (changeEvent) => {
     if (changeEvent.target.name === "metals") {
-        setMetalSelection(parseInt(changeEvent.target.value))
+        const valueOfSelectedItem = parseInt(changeEvent.target.value)
+        setMetalSelection(valueOfSelectedItem)
+        const customEvent = new CustomEvent('orderBuilderChanged')
+        document.dispatchEvent(customEvent)
     }
 }
+
+document.addEventListener("change", handleMetalChange)
 
 export const MetalChoices = async () => {
     const response = await fetch('http://localhost:8088/metals')
     const metalChoicesArray = await response.json()
     
-    document.addEventListener("change", handleMetalChange)
-
-    let html = ''
-    const metalHtmlStringArray = metalChoicesArray.map((metal) => {
-        return `
-            <div class="box__item">
-                <input type="radio" id="metal-${metal.id}" name="metals" value="${metal.id}">
-                <label for="metal-${metal.id}">${metal.metal}</label>
-            </div>
-        `
-    })
-    html += metalHtmlStringArray.join('')
+    const html = setToChecked(metalChoicesArray, "metalId", "metal", "metal", "")
 
     return html
 }

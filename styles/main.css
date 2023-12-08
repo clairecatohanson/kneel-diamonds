@@ -40,11 +40,28 @@ h1 {
 .box__heading {
     margin: 10px 0px;
     text-shadow: 1.5px 1.5px #9DA3A4;
+    text-align: center;
 }
 
-.box__item, .one-column__item {
+.box__item, .one-column__item, .flex__item {
     padding: 3px;
     font-size: 1.2em;
+}
+
+#jewelry-box {
+    width: 50%;
+    margin: 20px auto;
+}
+
+#jewelry-choices {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex__item {
+    flex-basis: 120px;
 }
 
 #button__order {

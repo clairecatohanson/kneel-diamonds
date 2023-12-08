@@ -70,48 +70,121 @@
       "price": 1241
     }
   ],
+  "types": [
+    {
+      "id": 1,
+      "type": "Ring",
+      "priceFactor": 1
+    },
+    {
+      "id": 2,
+      "type": "Earrings",
+      "priceFactor": 2
+    },
+    {
+      "id": 3,
+      "type": "Necklace",
+      "priceFactor": 4
+    }
+  ],
   "orders": [
-    {
-      "metalId": 2,
-      "sizeId": 2,
-      "styleId": 2,
-      "id": 1
-    },
-    {
-      "metalId": 3,
-      "sizeId": 3,
-      "styleId": 1,
-      "id": 2
-    },
-    {
-      "metalId": 4,
-      "sizeId": 5,
-      "styleId": 3,
-      "id": 3
-    },
-    {
-      "metalId": 1,
-      "sizeId": 3,
-      "styleId": 3,
-      "id": 4
-    },
     {
       "metalId": 2,
       "sizeId": 1,
       "styleId": 1,
+      "typeId": 2,
+      "id": 1
+    },
+    {
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 1,
+      "id": 2
+    },
+    {
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 2,
+      "id": 3
+    },
+    {
+      "metalId": 1,
+      "sizeId": 1,
+      "styleId": 1,
+      "typeId": 3,
+      "id": 4
+    },
+    {
+      "metalId": 3,
+      "sizeId": 3,
+      "styleId": 3,
+      "typeId": 1,
       "id": 5
     },
     {
-      "metalId": 4,
+      "metalId": 3,
       "sizeId": 3,
-      "styleId": 2,
+      "styleId": 3,
+      "typeId": 2,
       "id": 6
     },
     {
       "metalId": 3,
-      "sizeId": 5,
-      "styleId": 1,
+      "sizeId": 3,
+      "styleId": 3,
+      "typeId": 3,
       "id": 7
+    },
+    {
+      "metalId": 4,
+      "sizeId": 2,
+      "styleId": 2,
+      "typeId": 3,
+      "id": 8
+    },
+    {
+      "metalId": 2,
+      "sizeId": 1,
+      "styleId": 3,
+      "typeId": 2,
+      "id": 9
+    },
+    {
+      "metalId": 1,
+      "sizeId": 4,
+      "styleId": 2,
+      "typeId": 1,
+      "id": 10
+    },
+    {
+      "metalId": 3,
+      "sizeId": 3,
+      "styleId": 1,
+      "typeId": 1,
+      "id": 11
+    },
+    {
+      "metalId": 1,
+      "sizeId": 3,
+      "styleId": 1,
+      "typeId": 1,
+      "id": 12
+    },
+    {
+      "metalId": 4,
+      "sizeId": 5,
+      "styleId": 3,
+      "typeId": 3,
+      "id": 13
+    },
+    {
+      "metalId": 2,
+      "sizeId": 4,
+      "styleId": 1,
+      "typeId": 2,
+      "id": 14
     }
   ]
 }

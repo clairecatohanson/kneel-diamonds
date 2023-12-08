@@ -1,8 +1,10 @@
-import { setSizeSelection } from './TransientState.js'
+import { setSizeSelection, setToChecked } from './TransientState.js'
 
 const handleSizeChange = (changeEvent) => {
     if (changeEvent.target.name === "sizes") {
         setSizeSelection(parseInt(changeEvent.target.value))
+        const customEvent = new CustomEvent('orderBuilderChanged')
+        document.dispatchEvent(customEvent)
     }
 }
 
@@ -12,17 +14,18 @@ export const SizeChoices = async () => {
 
     document.addEventListener("change", handleSizeChange)
 
-    let html = ''
-    const sizeHtmlStringArray = sizeChoicesArray.map((size) => {
-        return `
-            <div class="box__item">
-                <input type="radio" id="size-${size.id}" name="sizes" value="${size.id}">
-                <label for="size-${size.id}">${size.carats} carats</label>
-            </div>
-        `
-    })
+    const html = setToChecked(sizeChoicesArray, "sizeId", "size", "carats", " carats")
 
-    html += sizeHtmlStringArray.join('')
+    // const sizeHtmlStringArray = sizeChoicesArray.map((size) => {
+    //     return `
+    //         <div class="box__item">
+    //             <input type="radio" id="size-${size.id}" name="sizes" value="${size.id}">
+    //             <label for="size-${size.id}">${size.carats} carats</label>
+    //         </div>
+    //     `
+    // })
+
+    // html += sizeHtmlStringArray.join('')
     
     return html
 }

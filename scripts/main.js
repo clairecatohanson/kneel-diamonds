@@ -1,12 +1,14 @@
 import { MetalChoices } from './MetalsBlock.js'
 import { SizeChoices } from './SizesBlock.js'
 import { StyleChoices } from './StylesBlock.js'
+import { JewelryTypeChoices } from './JewelryTypes.js'
 import { OrdersList, PlaceOrderButton } from './OrdersBlock.js'
 
 const render = async () => {
     const metalsHTML = await MetalChoices()
     const sizesHTML = await SizeChoices()
     const stylesHTML = await StyleChoices()
+    const typesHTML = await JewelryTypeChoices()
     const buttonHTML = PlaceOrderButton()
     const ordersHTML = await OrdersList()
 
@@ -26,6 +28,12 @@ const render = async () => {
                     ${stylesHTML}
                 </article>
             </div>
+            <article class="box" id="jewelry-box">
+                <h2 class="box__heading">Jewelry Type</h2>
+                <div id="jewelry-choices">
+                    ${typesHTML}
+                </div>
+            </article>
             ${buttonHTML}
         </section>
         <section id="orders-submitted">
@@ -44,5 +52,10 @@ render()
 
 document.addEventListener('orderReceived', (orderButtonClicked) => {
     console.log('order received')
+    render()
+})
+
+document.addEventListener('orderBuilderChanged', (orderButtonClicked) => {
+    console.log('order change received. regenerating the html...')
     render()
 })
