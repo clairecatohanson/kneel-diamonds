@@ -1,18 +1,18 @@
-import { MetalChoices } from './MetalsBlock.js'
-import { SizeChoices } from './SizesBlock.js'
-import { StyleChoices } from './StylesBlock.js'
-import { JewelryTypeChoices } from './JewelryTypes.js'
-import { OrdersList, PlaceOrderButton } from './OrdersBlock.js'
+import { MetalChoices } from "./MetalsBlock.js"
+import { SizeChoices } from "./SizesBlock.js"
+import { StyleChoices } from "./StylesBlock.js"
+import { JewelryTypeChoices } from "./JewelryTypes.js"
+import { OrdersList, PlaceOrderButton } from "./OrdersBlock.js"
 
 const render = async () => {
-    const metalsHTML = await MetalChoices()
-    const sizesHTML = await SizeChoices()
-    const stylesHTML = await StyleChoices()
-    const typesHTML = await JewelryTypeChoices()
-    const buttonHTML = PlaceOrderButton()
-    const ordersHTML = await OrdersList()
+  const metalsHTML = await MetalChoices()
+  const sizesHTML = await SizeChoices()
+  const stylesHTML = await StyleChoices()
+  const typesHTML = await JewelryTypeChoices()
+  const buttonHTML = PlaceOrderButton()
+  const ordersHTML = await OrdersList()
 
-    const mainHTML = `
+  const mainHTML = `
         <section id="order-options">
             <div class="boxes-container">
                 <article class="box">
@@ -43,19 +43,19 @@ const render = async () => {
             </article>
         </section>
     `
-    
-    const mainEl = document.querySelector('#container')
-    mainEl.innerHTML = mainHTML
+
+  const mainEl = document.querySelector("#container")
+  mainEl.innerHTML = mainHTML
 }
 
 render()
 
-document.addEventListener('orderReceived', (orderButtonClicked) => {
-    console.log('order received')
-    render()
+document.addEventListener("orderReceived", (orderButtonClicked) => {
+  console.log("order received")
+  render()
 })
 
-document.addEventListener('orderBuilderChanged', (orderButtonClicked) => {
-    console.log('order change received. regenerating the html...')
-    render()
+document.addEventListener("orderBuilderChanged", (orderButtonClicked) => {
+  console.log("order change received. regenerating the html...")
+  render()
 })
