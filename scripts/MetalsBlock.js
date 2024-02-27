@@ -1,5 +1,4 @@
 import { setMetalSelection, setToChecked } from "./TransientState.js"
-// import { JSONServer } from "../server-refactor"
 
 const handleMetalChange = (changeEvent) => {
   if (changeEvent.target.name === "metals") {
